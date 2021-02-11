@@ -1,0 +1,41 @@
+
+import java.util.*;
+
+public class Main{
+    
+    
+    public static void mergeTwoArrayWithoutExtraSpace(int[] arr1 , int[] arr2){
+        
+        for(int i=0;i<arr1.length;i++){
+            
+            for(int j=0 ;j<arr2.length;j++){
+                
+                if( arr1[i]  > arr2[j]){
+                    int temp = arr1[i];
+                    arr1[i] = arr2[j];
+                    arr2[j]= temp;
+                }
+            }
+        }
+        Arrays.sort(arr2);
+    }
+    
+    
+    public static void main(String [ ]  args){
+        
+        
+       int arr1[] = {10, 12};
+      int  arr2[] = {5, 18, 20};
+
+        
+       mergeTwoArrayWithoutExtraSpace(arr1 ,arr2);
+       for(int result : arr1)
+         System.out.print(result +" ");
+        
+        System.out.println();
+    
+       for(int result1 : arr2)
+         System.out.print(result1 +" ");
+        
+    }
+}
