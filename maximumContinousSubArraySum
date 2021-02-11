@@ -1,0 +1,46 @@
+
+import java.util.*;
+
+public class Main{
+    
+    
+    public static int maximumSubArraySum(int[] arr){
+        
+        
+        int max_num = Arrays.stream(arr).max().getAsInt();
+        
+        
+        if(max_num <0)
+            return max_num;
+        
+        
+        int sum =0;
+        int max_sub_array = 0;
+        for(int i=0;i<arr.length;i++){
+            sum = sum + arr[i];
+            
+            sum  = Math.max(sum ,0);
+            
+            max_sub_array =  Math.max(max_sub_array,sum);
+            
+        }
+        return max_sub_array;
+    }
+    
+    
+    public static void main(String [ ]  args){
+        
+        
+        int[] arr =  {1,2,3,-2,5};
+        
+        int result = maximumSubArraySum(arr);
+        System.out.println(result);
+        
+        int[] arr1 = {-1,-2,-3,-4};
+        
+       int result1 = maximumSubArraySum(arr1);
+        System.out.println(result1);
+        
+        
+    }
+}
